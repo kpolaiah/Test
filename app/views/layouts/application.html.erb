@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.custom.min.js" type="text/javascript"></script>
+<link href=http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css 
+	rel="stylesheet" type="text/css"/>    
+           <title>Test</title>
+         	   
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("div").mouseover(function(){
+    $(this).focus("slow");
+     $("div").css("background-color","#8DB600");
+    
+  });
+$("div#n").mouseover(function(){
+    $(this).focus("slow");
+    
+  });
+$("div#s").mouseover(function(){
+    $(this).focus("slow");
+  
+  });
+
+$("div#e").mouseover(function(){
+    $(this).focus("slow");
+  
+  });
+});
+</script >
+
+
+
+  
+</head>
+<body>
+
+ 
+
+<%= yield %>
+
+
+</body>
+</html>

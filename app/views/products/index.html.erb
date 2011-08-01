@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  var abc = new Array();
+  <% @products.each do |product| %>
+   abc.push("<%= product.name %>");
+  <% end %>
+  $(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+    source: abc
+});
+  });
+  </script>
+</head>
+<body style="font-size:62.5%;">
+  
+<input id="autocomplete" />
+
+</body>
+</html>
+<h1>Listing products</h1>
+<div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.rate %></td>
+    <td><%= link_to 'Show', product, :id => "back" %></td>
+    <td><%= link_to 'Edit', edit_product_path(product), :id => "back" %></td>
+    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?',:remote=>:true, :method => :delete, :id => "back" %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+</body>
+</html>
+<br />
+
+<%= link_to 'New Product', new_product_path, :id => "back" %>
