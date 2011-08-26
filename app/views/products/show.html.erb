@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<table  style="width:1024px; height:400px;">
+<tr style="width:1024px; height:400px;">
+<td style="width:512px; height:400px;">
 <div id="s">
 <p>
   <b>Name:</b>
@@ -16,5 +19,16 @@
 </p>
 
 </div>
+</td>
+<td style="width:512px; height:400px;"> <div> <%= render 'jqpolt' %> </div></td>
+</tr>
+
+
+</table>
 <%= link_to 'Edit', edit_product_path(@product), :id => "back" %> |
 <%= link_to 'Back', products_path, :id => "back" %>
+
+
+
+
+
